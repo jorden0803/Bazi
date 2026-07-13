@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /mnt/c/Project/Bazi log --oneline -20)",
+      "Bash(git -C /mnt/c/Project/Bazi status)",
+      "Bash(npm ls *)",
+      "Bash(npx --yes playwright --version)"
+    ]
+  }
+}
