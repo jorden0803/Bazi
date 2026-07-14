@@ -4,6 +4,45 @@
   var data = window.BaziReference || [];
   var currentIndex = 0;
 
+  tabsEl.addEventListener("wheel", function (e) {
+    if (e.deltaY === 0) return;
+    tabsEl.scrollLeft += e.deltaY;
+    e.preventDefault();
+  }, { passive: false });
+
+  var isDragging = false;
+  var dragged = false;
+  var dragStartX = 0;
+  var dragStartScrollLeft = 0;
+
+  tabsEl.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    dragged = false;
+    dragStartX = e.pageX;
+    dragStartScrollLeft = tabsEl.scrollLeft;
+    tabsEl.classList.add("dragging");
+  });
+
+  window.addEventListener("mousemove", function (e) {
+    if (!isDragging) return;
+    var walk = e.pageX - dragStartX;
+    if (Math.abs(walk) > 5) dragged = true;
+    tabsEl.scrollLeft = dragStartScrollLeft - walk;
+  });
+
+  window.addEventListener("mouseup", function () {
+    isDragging = false;
+    tabsEl.classList.remove("dragging");
+  });
+
+  tabsEl.addEventListener("click", function (e) {
+    if (dragged) {
+      e.stopPropagation();
+      e.preventDefault();
+      dragged = false;
+    }
+  }, true);
+
   function renderTabs() {
     tabsEl.innerHTML = "";
     data.forEach(function (cat, i) {

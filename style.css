@@ -54,7 +54,7 @@ body {
 
 .app-bar h1 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.43rem;
   font-weight: 700;
   text-align: center;
 }
@@ -91,7 +91,7 @@ body {
   background: none;
   border: none;
   font-family: inherit;
-  font-size: 0.72rem;
+  font-size: 0.936rem;
   color: var(--muted);
   cursor: pointer;
 }
@@ -131,14 +131,14 @@ body {
 }
 
 .picker-field label {
-  font-size: 0.75rem;
+  font-size: 0.975rem;
   color: var(--muted);
   padding-left: 2px;
 }
 
 .picker-field select {
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 1.196rem;
   padding: 11px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
@@ -170,12 +170,12 @@ body {
 }
 
 .stat-tile strong {
-  font-size: 1.2rem;
+  font-size: 1.56rem;
   font-weight: 700;
 }
 
 .stat-tile span {
-  font-size: 0.72rem;
+  font-size: 0.936rem;
   color: var(--muted);
 }
 
@@ -205,7 +205,7 @@ body {
   background: none;
   border-radius: calc(var(--radius-md) - 4px);
   padding: 10px 6px;
-  font-size: 0.85rem;
+  font-size: 1.105rem;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -224,7 +224,7 @@ body {
   border: none;
   background: none;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 1.04rem;
   padding: 8px 6px;
   white-space: nowrap;
 }
@@ -242,7 +242,7 @@ body {
 }
 
 .prompt {
-  font-size: 1.2rem;
+  font-size: 1.56rem;
   font-weight: 700;
   margin: 0 0 18px;
   text-align: center;
@@ -294,7 +294,7 @@ body {
 }
 
 .hand-finger-label {
-  font-size: 13px;
+  font-size: 16.9px;
   text-anchor: middle;
   fill: var(--muted);
 }
@@ -306,7 +306,7 @@ body {
 }
 
 .hand-label-text {
-  font-size: 14px;
+  font-size: 18.2px;
   font-weight: 700;
   text-anchor: middle;
   fill: var(--accent-strong);
@@ -322,7 +322,7 @@ body {
   background: #faf8f4;
   color: var(--ink);
   padding: 14px 16px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   transition: background 0.15s, border-color 0.15s, transform 0.05s;
 }
 
@@ -386,7 +386,7 @@ body {
   min-height: 22px;
   margin-top: 16px;
   text-align: center;
-  font-size: 0.92rem;
+  font-size: 1.196rem;
   color: var(--muted);
 }
 
@@ -403,7 +403,7 @@ body {
   background: var(--accent);
   color: #fff;
   padding: 15px;
-  font-size: 1.02rem;
+  font-size: 1.326rem;
   font-weight: 700;
   box-shadow: var(--shadow-lift);
 }
@@ -419,7 +419,7 @@ body {
 .review-empty {
   text-align: center;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 /* ---- Reference view ---- */
@@ -433,6 +433,12 @@ body {
   margin-bottom: 14px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  cursor: grab;
+}
+
+.ref-tabs.dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .ref-tabs::-webkit-scrollbar {
@@ -448,7 +454,7 @@ body {
   background: var(--card-bg);
   color: var(--ink);
   padding: 9px 16px;
-  font-size: 0.88rem;
+  font-size: 1.144rem;
   white-space: nowrap;
 }
 
@@ -469,7 +475,7 @@ body {
 
 .ref-section h3 {
   margin: 0 0 12px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--accent-strong);
 }
@@ -482,7 +488,7 @@ body {
 .ref-table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1.17rem;
 }
 
 .ref-table th, .ref-table td {
@@ -513,7 +519,7 @@ body {
   box-shadow: var(--shadow);
   padding: 12px 16px;
   margin-bottom: 14px;
-  font-size: 0.9rem;
+  font-size: 1.17rem;
   color: var(--muted);
 }
 
@@ -532,7 +538,7 @@ body {
 }
 
 .result-time {
-  font-size: 2.4rem;
+  font-size: 3.12rem;
   font-weight: 800;
   color: var(--accent);
   margin: 0;
@@ -540,7 +546,7 @@ body {
 
 .result-time-label {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 1.105rem;
   margin: 4px 0 22px;
 }
 
@@ -557,12 +563,12 @@ body {
 }
 
 .result-stats strong {
-  font-size: 1.4rem;
+  font-size: 1.82rem;
   font-weight: 700;
 }
 
 .result-stats span {
-  font-size: 0.8rem;
+  font-size: 1.04rem;
   color: var(--muted);
 }
 
