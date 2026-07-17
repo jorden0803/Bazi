@@ -1,5 +1,5 @@
 (function () {
-  var TOTAL_QUESTIONS = 30;
+  var TOTAL_QUESTIONS = 20;
   var PENALTY_MS = 5000;
   var ADVANCE_DELAY_MS = 600;
 
