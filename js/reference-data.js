@@ -190,6 +190,72 @@
       ]
     },
     {
+      category: "十神",
+      sections: [
+        {
+          title: "十神(生剋 × 陰陽)",
+          html: (function () {
+            var BOX_W = 116, BOX_H = 72;
+            function godLine(gods) {
+              return gods.map(function (g) {
+                return "<tspan" + (g[1] ? " class=\"ss-god-diff\"" : "") + ">" + g[0] + "</tspan>";
+              }).join("<tspan>　</tspan>");
+            }
+            function box(x, y, gods, group) {
+              var cx = x + BOX_W / 2;
+              return "<rect class=\"ss-box\" x=\"" + x + "\" y=\"" + y + "\" width=\"" + BOX_W + "\" height=\"" + BOX_H + "\" rx=\"12\"/>" +
+                "<text class=\"ss-god\" x=\"" + cx + "\" y=\"" + (y + 31) + "\" text-anchor=\"middle\">" + godLine(gods) + "</text>" +
+                "<text class=\"ss-group\" x=\"" + cx + "\" y=\"" + (y + 55) + "\" text-anchor=\"middle\">" + group + "</text>";
+            }
+            function arrow(x, y1, y2) {
+              return "<line class=\"ss-line\" x1=\"" + x + "\" y1=\"" + y1 + "\" x2=\"" + x + "\" y2=\"" + y2 + "\" marker-end=\"url(#ssArrowHead)\"/>";
+            }
+            function rel(x, y, label) {
+              return "<text class=\"ss-rel\" x=\"" + x + "\" y=\"" + y + "\" text-anchor=\"middle\">" + label + "</text>";
+            }
+            var svg =
+              "<svg class=\"shishen-svg\" viewBox=\"0 0 400 390\" role=\"img\" aria-label=\"十神生剋圖\">" +
+                "<defs><marker id=\"ssArrowHead\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\">" +
+                  "<path d=\"M0,0 L8,4 L0,8 Z\" fill=\"var(--muted)\"/>" +
+                "</marker></defs>" +
+                box(34, 16, [["正官", true], ["七殺", false]], "官殺") +
+                box(158, 16, [["正印", true], ["偏印", false]], "印") +
+                arrow(92, 88, 156) + rel(64, 126, "剋我") +
+                arrow(216, 88, 156) + rel(244, 126, "生我") +
+                "<rect class=\"ss-center\" x=\"40\" y=\"162\" width=\"196\" height=\"62\" rx=\"14\"/>" +
+                "<text class=\"ss-center-text\" x=\"138\" y=\"200\" text-anchor=\"middle\">日主為我</text>" +
+                "<line class=\"ss-line\" x1=\"236\" y1=\"193\" x2=\"276\" y2=\"193\"/>" + rel(257, 184, "同我") +
+                box(278, 157, [["比肩", false], ["劫財", true]], "比劫") +
+                arrow(92, 232, 294) + rel(64, 266, "我剋") +
+                arrow(216, 232, 294) + rel(244, 266, "我生") +
+                box(34, 300, [["正財", true], ["偏財", false]], "財") +
+                box(158, 300, [["食神", false], ["傷官", true]], "食傷") +
+              "</svg>";
+            return "<p>口訣:<strong>陰陽不同:財、官、印、劫、傷</strong></p>" +
+              "<p>紅字是陰陽不同,黑字是陰陽相同。</p>" +
+              "<div class=\"shishen-wrap\">" + svg + "</div>";
+          })()
+        },
+        {
+          title: "十神相生相剋",
+          html: (function () {
+            function chain(title, verb, nodes) {
+              var items = nodes.map(function (n, i) {
+                var node = "<span class=\"ss-chain-node" + (i === nodes.length - 1 ? " ss-chain-loop" : "") + "\">" + n + "</span>";
+                return i === 0 ? node : "<span class=\"ss-chain-arrow\">" + verb + "<br>↓</span>" + node;
+              }).join("");
+              return "<div class=\"ss-chain\"><div class=\"ss-chain-title\">" + title + "</div>" + items + "</div>";
+            }
+            return "<div class=\"ss-chains\">" +
+              chain("相生", "生", ["財", "官殺", "印", "比劫", "食傷", "財"]) +
+              chain("相剋", "剋", ["財", "印", "食傷", "官殺", "比劫", "財"]) +
+              "</div>" +
+              "<p>一條唸下來,最後又回到財(循環)。</p>";
+          })()
+        }
+      ]
+    },
+    {
       category: "手掌地支",
       sections: [
         {

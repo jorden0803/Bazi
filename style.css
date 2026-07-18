@@ -502,6 +502,107 @@ body {
   color: var(--ink);
 }
 
+/* ---- 十神生剋圖解 ---- */
+.shishen-wrap {
+  max-width: 420px;
+  margin: 0 auto 10px;
+}
+
+.shishen-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shishen-svg .ss-box {
+  fill: var(--bg);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.shishen-svg .ss-center {
+  fill: var(--accent);
+}
+
+.shishen-svg .ss-center-text {
+  fill: #fff;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.shishen-svg .ss-god {
+  font-size: 16px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.shishen-svg .ss-god-diff {
+  fill: var(--accent-strong);
+}
+
+.shishen-svg .ss-group {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.shishen-svg .ss-rel {
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.shishen-svg .ss-line {
+  stroke: var(--muted);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* ---- 十神相生相剋 直鏈 ---- */
+.ss-chains {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 6px 0 10px;
+}
+
+.ss-chain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ss-chain-title {
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin-bottom: 8px;
+}
+
+.ss-chain-node {
+  display: block;
+  min-width: 76px;
+  padding: 7px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  font-weight: 700;
+  text-align: center;
+}
+
+.ss-chain-node.ss-chain-loop {
+  border-style: dashed;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.ss-chain-arrow {
+  display: block;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.25;
+  margin: 4px 0;
+}
+
 /* ---- Test view ---- */
 
 .test-intro-text {
